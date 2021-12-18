@@ -1,0 +1,139 @@
+SQL Assessment Answers
+----------------------
+
+QUESTION - 3
+------------
+
+Database
+
+QUESTION - 4
+------------
+
+Host Name
+
+QUESTION - 5
+------------
+
+show databases LIKE "test%";
+
+QUESTION - 6
+------------
+
+select count(*) from table_name;
+
+QUESTION - 7
+------------
+
+picture
+
+QUESTION - 8
+------------
+
+SELECT REPLACE(FIRST_NAME, "a" , "A") FROM Worker;
+
+QUESTION - 9
+------------
+
+SELECT * FROM worker ORDER BY FIRST_NAME ASC , DEPARTMENT DESC;
+
+QUESTION - 10
+-------------
+
+SELECT * FROM worker WHERE first_name NOT IN ("Vipul" , "Sathish");
+
+QUESTION - 11
+-------------
+
+SELECT * FROM Worker where FIRST_NAME LIKE "_____h%"; 
+
+(note - the number of under_score is 5)
+
+QUESTION - 12
+-------------
+
+picture
+
+QUESTION - 13
+-------------
+
+SELECT COUNT(*) FROM Employeeinfo 
+WHERE DOB BETWEEN CAST ('1970-05-02' AS DATE) AND CAST ('1975-12-31' AS DATE) 
+AND GROUP BY Gender;
+
+QUESTION - 14
+-------------
+
+SELECT * FROM Employeeinfo 
+WHERE (EmpID IN 
+(SELECT EmpPosition FROM EmpoloyeePosition WHERE EmpPosition = "Manager"));
+
+QUESTION - 15
+-------------
+
+SELECT Salary FROM EmployeePosition ORDER BY Salary DESC LIMIT 2 ;
+
+SELECT Salary FROM EmployeePosition ORDER BY Salary LIMIT 2 ;
+
+QUESTION - 16
+-------------
+
+INSERT INTO EmployeeInfo 
+VALUES (6,"Thirupathi","Narayanan", "IT","P5", "Srivilliputhur(SVPR)","13/09/2000","M")
+
+QUESTION - 17
+-------------
+
+DELETE FROM EmployeePosition WHERE EmpPosition = "Lead";
+
+QUESTION - 18
+-------------
+
+picture
+
+QUESTION - 19
+-------------
+
+SELECT daily_menu.item_id, menu_items.name FROM daily_menu 
+FULL OUTER JOIN menu_items ON daily_menu.item_id = menu_items.item_id ;
+
+QUESTION - 20
+-------------
+
+SELECT daily_menu.item_id, menu_items.name, menu_items.is_veg FROM daily_menu 
+RIGHT JOIN menu_items ON daily_menu.item_id = menu_items.item_id;
+
+QUESTION - 21
+-------------
+
+picture
+
+QUESTION - 22
+-------------
+
+SELECT MIN(Salary), MAX(Salary), AVG(Salary) FROM EmployeeSalary;
+
+QUESTION - 23
+-------------
+
+SELECT EmployeeDetails.EmpId, EmployeeSalary.EmpId FROM EmployeeDetails, EmployeeSalary;
+
+QUESTION - 24
+-------------
+
+SELECT COUNT(*) FROM EmployeeDetails WHERE FullName LIKE "%n%";
+
+QUESTION - 25
+-------------
+
+SELECT FullName from EmployeeDetails WHERE EmpId ON (Salary BETWEEN 5000 AND 10000)
+
+QUESTION - 26
+-------------
+
+SELECT Project ,count(*) AS count_des FROM EmployeeSalary 
+GROUP BY Project ORDER BY count_des DESC;
+
+QUESTION - 27
+-------------
+
+SELECT * FROM EmployeeDetails group by EmpId having count(*) >= 1;
